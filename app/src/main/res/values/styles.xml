@@ -1,0 +1,96 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- The game's main layout. -->
+    <style name="linear_layout_game">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_below">@id/status_game</item>
+        <item name="android:layout_marginBottom">@dimen/dp_standard</item>
+        <item name="android:layout_marginRight">@dimen/dp_standard</item>
+        <item name="android:layout_marginLeft">@dimen/dp_standard</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- Vertical linear layout. -->
+    <style name="linear_layout_vert">
+        <item name="android:layout_width">@dimen/dp_zero</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- Horizontal linear layout. -->
+    <style name="linear_layout_horiz">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!-- Round functional button. -->
+    <style name="button_round">
+        <item name="android:layout_width">@dimen/button_round_dia</item>
+        <item name="android:layout_height">@dimen/button_round_dia</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/sp_button_round</item>
+    </style>
+
+    <!-- Bag scoring button. -->
+    <style name="button_bag">
+        <item name="android:layout_width">@dimen/button_bag</item>
+        <item name="android:layout_height">@dimen/button_bag</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">@dimen/dp_small</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textSize">@dimen/sp_button_bag</item>
+    </style>
+
+    <!-- Scoreboard header. -->
+    <style name="header">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style>
+
+    <!-- Scoreboard digital font. -->
+    <style name="digital">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:fontFamily">@font/digital_7_normal</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <!-- Scoreboard game status marquee. -->
+    <style name="status_game">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/dp_standard</item>
+        <item name="android:layout_marginLeft">@dimen/dp_standard</item>
+        <item name="android:layout_marginRight">@dimen/dp_standard</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:text">@string/status_init</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textSize">@dimen/status_game</item>
+    </style>
+
+    <!-- Background image. -->
+    <style name="image_background">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:src">@drawable/cornhole</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+</resources>

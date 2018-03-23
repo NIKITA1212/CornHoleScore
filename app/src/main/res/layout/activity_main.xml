@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Grow With Google Challenge Scholarship: Android Basics
+     Project: 2
+     Version: 2
+     App Name: Cornhole Score!
+     Author: Joseph McDonald -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cornhole"
+    tools:context="com.example.android.cornholescore.MainActivity">
+
+    <LinearLayout style="@style/linear_layout_game">
+
+        <TextView
+            android:id="@+id/status_game"
+            style="@style/status_game" />
+
+        <LinearLayout
+            style="@style/linear_layout_horiz"
+            android:layout_marginBottom="@dimen/dp_large">
+
+            <LinearLayout style="@style/linear_layout_vert">
+
+                <TextView
+                    style="@style/header"
+                    android:text="@string/name_team_a"
+                    android:textSize="@dimen/header_team" />
+
+                <TextView
+                    android:id="@+id/score_team_a_total"
+                    style="@style/digital"
+                    android:text="@string/score_total_team_a"
+                    android:textSize="@dimen/score_team" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_layout_vert">
+
+                <TextView
+                    style="@style/header"
+                    android:text="@string/name_team_b"
+                    android:textSize="@dimen/header_team" />
+
+                <TextView
+                    android:id="@+id/score_team_b_total"
+                    style="@style/digital"
+                    android:text="@string/score_total_team_b"
+                    android:textSize="@dimen/score_team" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/linear_layout_horiz"
+            android:layout_marginBottom="@dimen/dp_standard">
+
+            <LinearLayout style="@style/linear_layout_vert">
+
+                <TextView
+                    style="@style/header"
+                    android:text="@string/header_bags"
+                    android:textSize="@dimen/header_inning_bags" />
+
+                <TextView
+                    android:id="@+id/bags_team_a"
+                    style="@style/digital"
+                    android:text="@string/bags_team_a"
+                    android:textSize="@dimen/score_inning_bags" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_layout_vert">
+
+                <TextView
+                    style="@style/header"
+                    android:text="@string/header_inning"
+                    android:textSize="@dimen/header_inning_bags" />
+
+                <TextView
+                    android:id="@+id/inning_current"
+                    style="@style/digital"
+                    android:text="@string/inning_current"
+                    android:textSize="@dimen/score_inning_bags" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/linear_layout_vert">
+
+                <TextView
+                    style="@style/header"
+                    android:text="@string/header_bags"
+                    android:textSize="@dimen/header_inning_bags" />
+
+                <TextView
+                    android:id="@+id/bags_team_b"
+                    style="@style/digital"
+                    android:text="@string/bags_team_b"
+                    android:textSize="@dimen/score_inning_bags" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/linear_layout_horiz"
+            android:layout_marginBottom="@dimen/dp_standard">
+
+            <TextView
+                android:id="@+id/score_team_a_inning"
+                style="@style/digital"
+                android:layout_weight="1"
+                android:text="@string/score_inning_team_a"
+                android:textSize="@dimen/score_inning_bags" />
+
+            <TextView
+                android:id="@+id/score_team_b_inning"
+                style="@style/digital"
+                android:layout_weight="1"
+                android:text="@string/score_inning_team_b"
+                android:textSize="@dimen/score_inning_bags" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/button_plus3_a"
+                android:layout_margin="@dimen/dp_small"
+                style="@style/button_bag"
+                android:background="@drawable/bag_blue"
+                android:text="@string/button_plus_three" />
+
+            <Button
+                android:id="@+id/button_plus1_a"
+                android:layout_margin="@dimen/dp_small"
+                style="@style/button_bag"
+                android:background="@drawable/bag_blue"
+                android:text="@string/button_plus_one" />
+
+            <Button
+                android:id="@+id/button_plus3_b"
+                android:layout_margin="@dimen/dp_small"
+                style="@style/button_bag"
+                android:background="@drawable/bag_red"
+                android:text="@string/button_plus_three" />
+
+            <Button
+                android:id="@+id/button_plus1_b"
+                android:layout_margin="@dimen/dp_small"
+                style="@style/button_bag"
+                android:background="@drawable/bag_red"
+                android:text="@string/button_plus_one" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/button_zero_a"
+                style="@style/button_bag"
+                android:layout_margin="@dimen/dp_small"
+                android:background="@drawable/bag_blue"
+                android:text="@string/button_zero" />
+
+            <Button
+                android:id="@+id/button_minus1_a"
+                android:layout_margin="@dimen/dp_small"
+                style="@style/button_bag"
+                android:background="@drawable/bag_blue"
+                android:text="@string/button_minus_one" />
+
+            <Button
+                android:id="@+id/button_zero_b"
+                android:layout_margin="@dimen/dp_small"
+                style="@style/button_bag"
+                android:background="@drawable/bag_red"
+                android:text="@string/button_zero" />
+
+            <Button
+                android:id="@+id/button_minus1_b"
+                style="@style/button_bag"
+                android:layout_margin="@dimen/dp_small"
+                android:background="@drawable/bag_red"
+                android:text="@string/button_minus_one" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+
+            <Button
+                android:id="@+id/button_reset"
+                android:layout_margin="@dimen/dp_standard"
+                style="@style/button_round"
+                android:background="@drawable/button_black"
+                android:text="@string/button_reset" />
+
+            <Button
+                android:id="@+id/button_next_inning"
+                android:layout_margin="@dimen/dp_standard"
+                style="@style/button_round"
+                android:background="@drawable/button_green"
+                android:text="@string/button_next_inning" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

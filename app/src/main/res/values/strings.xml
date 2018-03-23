@@ -1,0 +1,89 @@
+<resources>
+    <!-- Application name. -->
+    <string name="app_name">Cornhole Score!</string>
+
+    <!-- Game background image description. -->
+    <string name="image_background">cornhole board</string>
+
+    <!-- Team A name. -->
+    <string name="name_team_a">Beer Bellies</string>
+
+    <!-- Team B name. -->
+    <string name="name_team_b">The Dad Bods</string>
+
+    <!-- Total score for Team A. -->
+    <string name="score_total_team_a">0</string>
+
+    <!-- Total score for Team B. -->
+    <string name="score_total_team_b">0</string>
+
+    <!-- Inning score for Team A. -->
+    <string name="score_inning_team_a">0</string>
+
+    <!-- Inning score for Team B. -->
+    <string name="score_inning_team_b">0</string>
+
+    <!-- Header for bags remaining to throw. -->
+    <string name="header_bags">bags</string>
+
+    <!-- Header for current inning. -->
+    <string name="header_inning">inning</string>
+
+    <!-- Bags remaining for Team A. -->
+    <string name="bags_team_a">4</string>
+
+    <!-- Bags remaining for Team B. -->
+    <string name="bags_team_b">4</string>
+
+    <!-- Current inning. -->
+    <string name="inning_current">1</string>
+
+    <!-- Three point bag scoring button. -->
+    <string name="button_plus_three">+3</string>
+
+    <!-- One point bag scoring button. -->
+    <string name="button_plus_one">+1</string>
+
+    <!-- Zero point bag scoring button. -->
+    <string name="button_zero">0</string>
+
+    <!-- Minus one point bag scoring button. -->
+    <string name="button_minus_one">-1</string>
+
+    <!-- Reset game button. -->
+    <string name="button_reset">reset game</string>
+
+    <!-- Next inning button. -->
+    <string name="button_next_inning">next inning</string>
+
+    <!-- Initialize game status marquee. -->
+    <string name="status_init">Let\'s Play!</string>
+
+    <!-- Start next inning game status. -->
+    <string name="status_start_inning">Start Inning\ </string>
+
+    <!-- Three points scored game status. -->
+    <string name="status_three_points">In-The-Hole! +3 pts</string>
+
+    <!-- One point scored game status. -->
+    <string name="status_one_point">In-The-Count. +1 pt</string>
+
+    <!-- Zero points scored game status. -->
+    <string name="status_zero_points">The Whiff! 0 pts</string>
+
+    <!-- Minus one point scored game status. -->
+    <string name="status_minus_point">That Hurts. -1 pt</string>
+
+    <!-- Prompt for next inning game status. -->
+    <string name="status_prompt_next_inning">\Next Inning?</string>
+
+    <!-- Bags remaining throw by either team game status. -->
+    <string name="status_bags_remain">Someone has bags, folks.</string>
+
+    <!-- Team already has zerp points game status. -->
+    <string name="status_zero_score">Absolute zero reached.</string>
+
+    <!-- The game has a winner game status. -->
+    <string name="status_winner">Winner!\ </string>
+
+</resources>
