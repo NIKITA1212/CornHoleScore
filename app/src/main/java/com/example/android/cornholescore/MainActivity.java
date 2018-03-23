@@ -16,54 +16,34 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    /**
-     * A score of 21 points wins the game.
-     */
+    // A score of 21 points wins the game.
     static final int WINNING_SCORE = 21;
 
-    /**
-     * A team with no more bags to throw.
-     */
+    // A team with no more bags to throw.
     static final int NO_BAGS = 0;
 
-    /**
-     * Total score for Team A.
-     */
+    // Total score for Team A.
     int scoreTeamA = 0;
 
-    /**
-     * Total score for Team B.
-     */
+    // Total score for Team B.
     int scoreTeamB = 0;
 
-    /**
-     * Bags remaining to throw for Team A.
-     */
+    // Bags remaining to throw for Team A.
     int bagsTeamA = 4;
 
-    /**
-     * Bags remaining to throw for Team B.
-     */
+    // Bags remaining to throw for Team B.
     int bagsTeamB = 4;
 
-    /**
-     * Current inning score for Team A.
-     */
+    // Current inning score for Team A.
     int scoreTeamAInning = 0;
 
-    /**
-     * Current inning score for Team B.
-     */
+    // Current inning score for Team B.
     int scoreTeamBInning = 0;
 
-    /**
-     * The game starts at Inning 1.
-     */
+    // The game starts at Inning 1.
     int currentInning = 1;
 
-    /**
-     * The game starts without a winner.
-     */
+    // The game starts without a winner.
     boolean noWinner = true;
 
     @Override
@@ -71,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // All the TextViews.
+        // Find all the TextViews.
         final TextView viewScoreTeamA = findViewById(R.id.score_team_a_total);
         final TextView viewScoreTeamB = findViewById(R.id.score_team_b_total);
         final TextView viewScoreTeamAInning = findViewById(R.id.score_team_a_inning);
@@ -81,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView viewInningCurrent = findViewById(R.id.inning_current);
         final TextView viewStatusGame = findViewById(R.id.status_game);
 
-        // All the Buttons.
+        // Find all the Buttons.
         final Button buttonPlus3TeamA = findViewById(R.id.button_plus3_a);
         final Button buttonPlus1TeamA = findViewById(R.id.button_plus1_a);
         final Button buttonZeroTeamA = findViewById(R.id.button_zero_a);
@@ -93,16 +73,21 @@ public class MainActivity extends AppCompatActivity {
         final Button buttonResetGame = findViewById(R.id.button_reset);
         final Button buttonNextInning = findViewById(R.id.button_next_inning);
 
+        // Create OnClickListener for all the Buttons.
         View.OnClickListener mOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Perform action on click
+                // Perform Button action on click.
                 switch (v.getId()) {
                     case R.id.button_plus3_a:
+                        // If we have a no winner, and team still has bags, add 3 points to score
+                        //    and decrement bag count and display them.
+                        //    If we have a winner, display score and announce winner.
+                        // else if both teams are out of bags, remind to press next inning.
                         if (noWinner) {
                             if (bagsTeamA > NO_BAGS) {
-                                viewScoreTeamAInning.setText(scoreUpdate("teamA", 3));
-                                viewBagsTeamA.setText(bagUpdate("teamA"));
+                                viewScoreTeamAInning.setText(scoreBag("teamA", 3));
+                                viewBagsTeamA.setText(decrBag("teamA"));
                                 viewStatusGame.setText(R.string.status_three_points);
 
                                 if (scoreTeamA >= WINNING_SCORE) {
@@ -121,11 +106,16 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
                         break;
+
                     case R.id.button_plus1_a:
+                        // If we have a no winner, and team still has bags, add 1 point to score
+                        //    and decrement bag count and display them.
+                        //    If we have a winner, display score and announce winner.
+                        // else if both teams are out of bags, remind to press next inning.
                         if (noWinner) {
                             if (bagsTeamA > NO_BAGS) {
-                                viewScoreTeamAInning.setText(scoreUpdate("teamA", 1));
-                                viewBagsTeamA.setText(bagUpdate("teamA"));
+                                viewScoreTeamAInning.setText(scoreBag("teamA", 1));
+                                viewBagsTeamA.setText(decrBag("teamA"));
                                 viewStatusGame.setText(R.string.status_one_point);
 
                                 if (scoreTeamA >= WINNING_SCORE) {
@@ -144,10 +134,13 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
                         break;
+
                     case R.id.button_zero_a:
+                        // If we have a no winner, and team still has bags, decrement bag count and display.
+                        // else if both teams are out of bags, remind to press next inning.
                         if (noWinner) {
                             if (bagsTeamA > NO_BAGS) {
-                                viewBagsTeamA.setText(bagUpdate("teamA"));
+                                viewBagsTeamA.setText(decrBag("teamA"));
                                 viewStatusGame.setText(R.string.status_zero_points);
 
                             } else if (bagsTeamA == NO_BAGS && bagsTeamB == NO_BAGS) {
@@ -155,10 +148,14 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
                         break;
+
                     case R.id.button_minus1_a:
+                        // If we have a no winner, and team still has bags, subtract 1 point to score
+                        //    and display.
+                        // else if both teams are out of bags, remind to press next inning.
                         if (noWinner) {
                             if (scoreTeamAInning > 0) {
-                                viewScoreTeamAInning.setText(scoreUpdate("teamA", -1));
+                                viewScoreTeamAInning.setText(scoreBag("teamA", -1));
                                 viewStatusGame.setText(R.string.status_minus_point);
 
                             } else {
@@ -166,11 +163,16 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
                         break;
+
                     case R.id.button_plus3_b:
+                        // If we have a no winner, and team still has bags, add 3 points to score
+                        //    and decrement bag count and display them.
+                        //    If we have a winner, display score and announce winner.
+                        // else if both teams are out of bags, remind to press next inning.
                         if (noWinner) {
                             if (bagsTeamB > NO_BAGS) {
-                                viewScoreTeamBInning.setText(scoreUpdate("teamB", 3));
-                                viewBagsTeamB.setText(bagUpdate("teamB"));
+                                viewScoreTeamBInning.setText(scoreBag("teamB", 3));
+                                viewBagsTeamB.setText(decrBag("teamB"));
                                 viewStatusGame.setText(R.string.status_three_points);
 
                                 if (scoreTeamA >= WINNING_SCORE) {
@@ -189,11 +191,16 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
                         break;
+
                     case R.id.button_plus1_b:
+                        // If we have a no winner, and team still has bags, add 1 point to score
+                        //    and decrement bag count and display them.
+                        //    If we have a winner, display score and announce winner.
+                        // else if both teams are out of bags, remind to press next inning.
                         if (noWinner) {
                             if (bagsTeamB > NO_BAGS) {
-                                viewScoreTeamBInning.setText(scoreUpdate("teamB", 1));
-                                viewBagsTeamB.setText(bagUpdate("teamB"));
+                                viewScoreTeamBInning.setText(scoreBag("teamB", 1));
+                                viewBagsTeamB.setText(decrBag("teamB"));
                                 viewStatusGame.setText(R.string.status_one_point);
 
                                 if (scoreTeamA >= WINNING_SCORE) {
@@ -212,10 +219,13 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
                         break;
+
                     case R.id.button_zero_b:
+                        // If we have a no winner, and team still has bags, decrement bag count and display.
+                        // else if both teams are out of bags, remind to press next inning.
                         if (noWinner) {
                             if (bagsTeamB > NO_BAGS) {
-                                viewBagsTeamB.setText(bagUpdate("teamB"));
+                                viewBagsTeamB.setText(decrBag("teamB"));
                                 viewStatusGame.setText(R.string.status_zero_points);
 
                             } else if (bagsTeamA == NO_BAGS && bagsTeamB == NO_BAGS) {
@@ -223,10 +233,14 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
                         break;
+
                     case R.id.button_minus1_b:
+                        // If we have a no winner, and team still has bags, subtract 1 point to score
+                        //    and display.
+                        // else if both teams are out of bags, remind to press next inning.
                         if (noWinner) {
                             if (scoreTeamBInning > 0) {
-                                viewScoreTeamBInning.setText(scoreUpdate("teamB", -1));
+                                viewScoreTeamBInning.setText(scoreBag("teamB", -1));
                                 viewStatusGame.setText(R.string.status_minus_point);
 
                             } else {
@@ -234,7 +248,9 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
                         break;
+
                     case R.id.button_reset:
+                        // Reset variables and views.
                         scoreTeamA = 0;
                         scoreTeamB = 0;
                         bagsTeamA = 4;
@@ -252,7 +268,11 @@ public class MainActivity extends AppCompatActivity {
                         viewInningCurrent.setText(String.valueOf(currentInning));
                         viewStatusGame.setText(R.string.status_init);
                         break;
+
                     case R.id.button_next_inning:
+                        // If we have no winner, and if both teams have no bags, reset bag counts,
+                        //    inning scores, increment inning and update views.
+                        // else if notify that there are still bags left to throw.
                         if (noWinner) {
                             if (bagsTeamA == NO_BAGS && bagsTeamB == NO_BAGS) {
                                 bagsTeamA = 4;
@@ -278,6 +298,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
+        // Set all the OnClickListeners.
         buttonPlus3TeamA.setOnClickListener(mOnClickListener);
         buttonPlus1TeamA.setOnClickListener(mOnClickListener);
         buttonZeroTeamA.setOnClickListener(mOnClickListener);
@@ -290,8 +311,14 @@ public class MainActivity extends AppCompatActivity {
         buttonNextInning.setOnClickListener(mOnClickListener);
     }
 
-
-    private String scoreUpdate(String team, int points) {
+    /**
+     * Updates team's score with points and returns String of team's current inning score.
+     *
+     * @param team   - team that just threw a bag.
+     * @param points - number of points of bag.
+     * @return - String of team's inning score to display.
+     **/
+    private String scoreBag(String team, int points) {
         if (team.equals("teamA")) {
             scoreTeamAInning += points;
             scoreTeamA += points;
@@ -304,7 +331,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private String bagUpdate(String team) {
+    /**
+     * Decrements team's bag count and returns String of team's current bag count.
+     *
+     * @param team - team that just threw a bag.
+     * @return - String of team's bag count to display.
+     **/
+    private String decrBag(String team) {
         if (team.equals("teamA")) {
             bagsTeamA -= 1;
             return String.valueOf(bagsTeamA);
