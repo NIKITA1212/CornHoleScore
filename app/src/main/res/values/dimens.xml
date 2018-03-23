@@ -4,7 +4,7 @@
     <dimen name="status_game">32sp</dimen>
     <dimen name="header_team">24sp</dimen>
     <dimen name="score_team">96sp</dimen>
-    <dimen name="header_inning_bags">20sp</dimen>
+    <dimen name="header_inning_bags">24sp</dimen>
     <dimen name="score_inning_bags">48sp</dimen>
     <dimen name="sp_button_bag">28sp</dimen>
     <dimen name="sp_button_round">14sp</dimen>
