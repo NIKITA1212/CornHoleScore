@@ -11,9 +11,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_below">@id/status_game</item>
-        <item name="android:layout_marginBottom">@dimen/dp_standard</item>
-        <item name="android:layout_marginRight">@dimen/dp_standard</item>
-        <item name="android:layout_marginLeft">@dimen/dp_standard</item>
+        <item name="android:layout_margin">@dimen/dp_standard</item>
         <item name="android:orientation">vertical</item>
     </style>
 
@@ -36,6 +34,7 @@
     <style name="button_round">
         <item name="android:layout_width">@dimen/button_round_dia</item>
         <item name="android:layout_height">@dimen/button_round_dia</item>
+        <item name="android:layout_margin">@dimen/dp_standard</item>
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textColor">@color/colorAccent</item>
         <item name="android:textSize">@dimen/sp_button_round</item>
@@ -43,10 +42,10 @@
 
     <!-- Bag scoring button. -->
     <style name="button_bag">
-        <item name="android:layout_width">@dimen/button_bag</item>
+        <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">@dimen/button_bag</item>
-        <item name="android:layout_gravity">center_horizontal</item>
-        <item name="android:layout_marginTop">@dimen/dp_small</item>
+        <item name="android:layout_margin">@dimen/dp_small</item>
+        <item name="android:layout_weight">1</item>
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textColor">@color/colorAccent</item>
         <item name="android:textSize">@dimen/sp_button_bag</item>
@@ -75,7 +74,6 @@
     <style name="status_game">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">@dimen/dp_standard</item>
         <item name="android:layout_marginLeft">@dimen/dp_standard</item>
         <item name="android:layout_marginRight">@dimen/dp_standard</item>
         <item name="android:fontFamily">sans-serif</item>

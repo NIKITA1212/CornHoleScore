@@ -5,6 +5,7 @@
      Version: 2
      App Name: Cornhole Score!
      Author: Joseph McDonald -->
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -125,63 +126,50 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal">
+        <LinearLayout style="@style/linear_layout_horiz">
 
             <Button
                 android:id="@+id/button_plus3_a"
-                android:layout_margin="@dimen/dp_small"
                 style="@style/button_bag"
                 android:background="@drawable/bag_blue"
                 android:text="@string/button_plus_three" />
 
             <Button
                 android:id="@+id/button_plus1_a"
-                android:layout_margin="@dimen/dp_small"
                 style="@style/button_bag"
                 android:background="@drawable/bag_blue"
                 android:text="@string/button_plus_one" />
 
             <Button
                 android:id="@+id/button_plus3_b"
-                android:layout_margin="@dimen/dp_small"
                 style="@style/button_bag"
                 android:background="@drawable/bag_red"
                 android:text="@string/button_plus_three" />
 
             <Button
                 android:id="@+id/button_plus1_b"
-                android:layout_margin="@dimen/dp_small"
                 style="@style/button_bag"
                 android:background="@drawable/bag_red"
                 android:text="@string/button_plus_one" />
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal">
+        <LinearLayout style="@style/linear_layout_horiz">
 
             <Button
                 android:id="@+id/button_zero_a"
                 style="@style/button_bag"
-                android:layout_margin="@dimen/dp_small"
                 android:background="@drawable/bag_blue"
                 android:text="@string/button_zero" />
 
             <Button
                 android:id="@+id/button_minus1_a"
-                android:layout_margin="@dimen/dp_small"
                 style="@style/button_bag"
                 android:background="@drawable/bag_blue"
                 android:text="@string/button_minus_one" />
 
             <Button
                 android:id="@+id/button_zero_b"
-                android:layout_margin="@dimen/dp_small"
                 style="@style/button_bag"
                 android:background="@drawable/bag_red"
                 android:text="@string/button_zero" />
@@ -189,7 +177,6 @@
             <Button
                 android:id="@+id/button_minus1_b"
                 style="@style/button_bag"
-                android:layout_margin="@dimen/dp_small"
                 android:background="@drawable/bag_red"
                 android:text="@string/button_minus_one" />
 
@@ -198,19 +185,16 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal">
-
+            android:layout_gravity="center">
 
             <Button
                 android:id="@+id/button_reset"
-                android:layout_margin="@dimen/dp_standard"
                 style="@style/button_round"
                 android:background="@drawable/button_black"
                 android:text="@string/button_reset" />
 
             <Button
                 android:id="@+id/button_next_inning"
-                android:layout_margin="@dimen/dp_standard"
                 style="@style/button_round"
                 android:background="@drawable/button_green"
                 android:text="@string/button_next_inning" />
