@@ -73,11 +73,10 @@ public class MainActivity extends AppCompatActivity {
         final Button buttonResetGame = findViewById(R.id.button_reset);
         final Button buttonNextInning = findViewById(R.id.button_next_inning);
 
-        // Create OnClickListener for all the Buttons.
+        // Create OnClickListener for all the Button actions.
         View.OnClickListener mOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Perform Button action on click.
                 switch (v.getId()) {
                     case R.id.button_plus3_a:
                         // If we have a no winner, and team still has bags, add 3 points to score
